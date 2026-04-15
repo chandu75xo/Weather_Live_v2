@@ -1,0 +1,83 @@
+/* ═══════════════════════════════════════════════
+   WEATHERLIVE — Design System v3
+   Theme: Precision Instrument / Weather Terminal
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* Palette */
+  --bg:        #080c14;
+  --bg-1:      #0d1220;
+  --bg-2:      #111827;
+  --surface:   rgba(255, 255, 255, 0.035);
+  --surface-h: rgba(255, 255, 255, 0.065);
+  --border:    rgba(255, 255, 255, 0.07);
+  --border-h:  rgba(255, 255, 255, 0.14);
+
+  /* Accents */
+  --sky:       #38bdf8;
+  --sky-dim:   rgba(56, 189, 248, 0.12);
+  --sky-glow:  rgba(56, 189, 248, 0.22);
+  --amber:     #fb923c;
+  --amber-dim: rgba(251, 146, 60, 0.12);
+  --green:     #34d399;
+  --red:       #f87171;
+
+  /* Text */
+  --tx:        #eef2ff;
+  --tx-2:      rgba(238, 242, 255, 0.5);
+  --tx-3:      rgba(238, 242, 255, 0.25);
+
+  /* Type */
+  --f-display: 'Outfit', sans-serif;
+  --f-mono:    'JetBrains Mono', monospace;
+
+  /* Layout */
+  --nav-h:    58px;
+  --r:        10px;
+  --r-lg:     16px;
+}
+
+/* ── Reset ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--f-display);
+  background: var(--bg);
+  color: var(--tx);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: var(--f-display); }
+input, button { outline: none; }
+
+/* ── Scrollbar ─────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-h); border-radius: 2px; }
+
+/* ── Glass surface ─────────────────────────── */
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ── Mono number ───────────────────────────── */
+.mono { font-family: var(--f-mono); }
+
+/* ── Reveal animation ──────────────────────── */
+@keyframes up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.up { animation: up 0.45s ease both; }
+.up-1 { animation: up 0.45s 0.05s ease both; }
+.up-2 { animation: up 0.45s 0.1s ease both; }
+.up-3 { animation: up 0.45s 0.15s ease both; }
+.up-4 { animation: up 0.45s 0.2s ease both; }
