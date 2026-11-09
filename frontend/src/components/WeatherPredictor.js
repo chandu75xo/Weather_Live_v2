@@ -120,7 +120,7 @@ const WeatherPredictor = () => {
       const r = await axios.post(`${BACKEND}/api/predict`, { features });
       setResult(r.data);
     } catch (e) {
-      setFormErr(e.response?.data?.error || "Prediction failed — is the backend running?");
+      setFormErr(e.response?.data?.error || "Prediction failed — service is not running?");
     } finally { setLoading(false); }
   };
 
